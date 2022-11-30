@@ -18,7 +18,7 @@ export default function Task( { task: { id, title, state}, onArchiveTask, onPinT
     />
     <span
       className="checkbox-custom"
-      onClick={() => onArchivetask(id)}
+      onClick={() => onArchiveTask(id)}
       />
     </label>
 
@@ -35,7 +35,7 @@ export default function Task( { task: { id, title, state}, onArchiveTask, onPinT
       {state !== "TASK_ARCHIVED" && (
         <button
         className="pin-button"
-        onClick={() => onPintask(id)}
+        onClick={() => onPinTask(id)}
         id={`pinTask-${id}`}
         key={`pinTask-${id}`}
         >
@@ -50,8 +50,8 @@ Task.propTypes = {
   task: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    state: PropTypes.string.IsRequired,
-    onArchiveTask: PropTypes.function,
-    onPinTask: PropTypes.function
+    state: PropTypes.string.isRequired,
+    onArchiveTask: PropTypes.func,
+    onPinTask: PropTypes.func,
   })
 }
